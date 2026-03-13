@@ -239,7 +239,7 @@ def _transitive_closure(elements: Set[Any], relations: Set[Tuple[Any, Any]]) -> 
     added = True
     while added:
         added = False
-        for a, b, c in combinations(elements, 3):
+        for a, b, c in permutations(elements, 3):
             if (a, b) in closure and (b, c) in closure and (a, c) not in closure:
                 closure.add((a, c))
                 added = True
